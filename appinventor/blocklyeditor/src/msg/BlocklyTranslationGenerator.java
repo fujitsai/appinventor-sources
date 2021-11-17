@@ -33,9 +33,9 @@ public class BlocklyTranslationGenerator {
     File blockly_english = new File(args[1].concat("/en.json"));
     File ai_english = new File(args[0].concat("/messages.json"));
 
-    JSONObject blockly_en_json = new JSONObject(new String(Files.readAllBytes(Paths.get(blockly_english.getPath()))));
+    JSONObject blockly_en_json = new JSONObject(new String(Files.readAllBytes(Paths.get(blockly_english.getPath())),"utf-8"));
     // Omit the the old key prefix for the AI translation keys
-    JSONObject ai_en_json = new JSONObject(new String(Files.readAllBytes(Paths.get(ai_english.getPath()))).replaceAll("Blockly.Msg.", ""));
+    JSONObject ai_en_json = new JSONObject(new String(Files.readAllBytes(Paths.get(ai_english.getPath())),"utf-8").replaceAll("Blockly.Msg.", ""));
 
     // All untranslated strings for a given language should default to English, so merge the Blockly and App Inventor
     // translations into one master english file that will be used in all the other translations.
@@ -69,9 +69,9 @@ public class BlocklyTranslationGenerator {
         String lang_code = file_name.substring(file_name.indexOf("_") + 1);
         // If a Blockly has a translation for this language (and it should),
         if (blockly_files.containsKey(lang_code)) {
-          json_to_merge.add(new JSONObject(new String(Files.readAllBytes(Paths.get(blockly_files.get(lang_code))))));
+          json_to_merge.add(new JSONObject(new String(Files.readAllBytes(Paths.get(blockly_files.get(lang_code))),"utf-8")));
         }
-        JSONObject ai_lang_json = new JSONObject(new String(Files.readAllBytes(Paths.get(f.getPath()))).replaceAll("Blockly.Msg.", ""));
+        JSONObject ai_lang_json = new JSONObject(new String(Files.readAllBytes(Paths.get(f.getPath())),"utf-8").replaceAll("Blockly.Msg.", ""));
         json_to_merge.add(ai_lang_json);
         JSONObject merged_language = merge_string_json(json_to_merge);
         FileUtils.writeStringToFile(new File(args[2].concat("/messages_").concat(lang_code).concat(".json")), merged_language.toString(2));
