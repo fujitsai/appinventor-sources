@@ -60,6 +60,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -919,7 +920,7 @@ public class FusiontablesControl extends AndroidNonvisibleComponent implements C
             .setTransport(TRANSPORT)
             .setJsonFactory(JSON_FACTORY)
             .setServiceAccountId(serviceAccountEmail)
-            .setServiceAccountScopes(scope)
+            .setServiceAccountScopes(Collections.singleton(scope))
             .setServiceAccountPrivateKeyFromP12File(cachedServiceCredentials)
             .build();
 
