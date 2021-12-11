@@ -78,7 +78,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <%    } %>
 <footer>
 <center><a href="<%= new UriBuilder("/login")
-                           .add("locale", "zh_CN")
+                           .add("locale", "zh_TW")
                            .add("repo", repo)
                            .add("autoload", autoload)
                            .add("galleryId", galleryId)
@@ -98,10 +98,8 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
                    .add("redirect", redirect).build() %>"  style="text-decoration:none;" >English</a></center>
 <p></p>
 <center>
-<%    if (locale != null && locale.equals("zh_CN")) { %>
-<a href="http://www.weibo.com/mitappinventor" target="_blank"><img class="img-scale"
-                  src="/static/images/mzl.png" width="30" height="30" title="Sina WeiBo"></a>&nbsp;
-<%    } %>
+
+
 <a href="http://www.appinventor.mit.edu" target="_blank"><img class="img-scale"
                 src="/static/images/login-app-inventor.jpg" width="50" height="30" title="MIT App Inventor"></a></center>
 <p></p>

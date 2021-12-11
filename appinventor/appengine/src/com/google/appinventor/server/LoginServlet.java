@@ -106,7 +106,7 @@ public class LoginServlet extends HttpServlet {
     }
     ResourceBundle bundle;
     if (locale == null) {
-      bundle = ResourceBundle.getBundle("com/google/appinventor/server/loginmessages", new Locale("en"));
+      bundle = ResourceBundle.getBundle("com/google/appinventor/server/loginmessages", new Locale("zh_TW"));
     } else {
       bundle = ResourceBundle.getBundle("com/google/appinventor/server/loginmessages", new Locale(locale));
     }
@@ -169,7 +169,7 @@ public class LoginServlet extends HttpServlet {
           return;
         }
         String uri = new UriBuilder("/login/google")
-          .add("locale", "en".equals(locale) ? null : locale)
+          .add("locale", "zh_TW".equals(locale) ? null : locale)
           .add("repo", repo)
           .add("ng", newGalleryId)
           .add("galleryId", galleryId)
@@ -289,7 +289,7 @@ public class LoginServlet extends HttpServlet {
     String autoload = params.get("autoload");
 
     if (locale == null) {
-      locale = "en";
+      locale = "zh_TW";
     }
 
     ResourceBundle bundle = ResourceBundle.getBundle("com/google/appinventor/server/loginmessages", new Locale(locale));
