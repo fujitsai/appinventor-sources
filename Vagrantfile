@@ -27,5 +27,5 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 8888, host: 8888
   config.vm.network :forwarded_port, guest: 9876, host: 9876
   config.vm.network :forwarded_port, guest: 9990, host: 9990
-
+  config.vm.network "public_network", :bridge => "Intel(R) Ethernet Connection (2) I219-V", :ip => "192.168.1.77"
 end

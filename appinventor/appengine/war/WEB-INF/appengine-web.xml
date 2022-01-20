@@ -165,9 +165,10 @@
     <property name="reference.components.url" value="/reference/components/" />
 
     <!-- CloudDB secret keys -->
-    <property name="clouddb.server" value="clouddb.example.com"/>
-    <property name="clouddb.uuid.secret" value="changeme!"/>
-    <property name="clouddb.secret" value="changeme too!" />
+    <property name="clouddb.server" value="34.81.72.124"/>
+	<!-- rendom generated value -->
+    <property name="clouddb.uuid.secret" value="f6a5bb004e59e86782b3580506831bd916ded20807cf67dd3f8c8539a26b5739"/>
+    <property name="clouddb.secret" value="ggcpggcp2021" />
 
     <!-- This appears to be needed after a suspected change in how
          POSTs work with URLFetch around 09/20/2018 -->
